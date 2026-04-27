@@ -7,14 +7,21 @@
 # After getting the folder where we want to make files we Creates dummy .jpeg files inside the test directory.
 # It is used for testing the file organizer project. initialize file names file path where they will be created and
 # then create the file by using file write function.
+# This whole code is inside a function generate_files which pases the extension arguement for both remaining files 
+# formations
 
 import os
-current_dir=os.path.dirname(os.path.abspath(__file__))
-root_dir=os.path.dirname(current_dir)
-test_dir=os.path.join(root_dir,"test")
-os.makedirs(test_dir, exist_ok=True)
-for i in range(1,10):
-    file_name=f"File_{i}.jpeg"
-    file_path=os.path.join(test_dir,file_name)
-    with open(file_path,"w") as f:
-        f.write(f"the file {i} has been created") # content not gonna appear on jpeg files though
+def generate_files(extensions,count=10):
+    current_dir=os.path.dirname(os.path.abspath(__file__))
+    root_dir=os.path.dirname(current_dir)
+    test_dir=os.path.join(root_dir,"test")
+    os.makedirs(test_dir, exist_ok=True)
+    for i in range(1,count):
+        file_name=f"File_{i}.{extensions}"
+        file_path=os.path.join(test_dir,file_name)
+        with open(file_path,"w") as f:
+            f.write(f"the file{i} has been created")
+if __name__=="__main__":
+    # generate_files("jpeg") since already created 
+    generate_files("txt")
+    generate_files("pdf")
