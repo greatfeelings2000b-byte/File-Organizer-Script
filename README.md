@@ -5,6 +5,7 @@ This project is a Python-based automation script that organizes files into folde
 - Creates folders if they don't exist
 - Moves files into appropriate directories (Images, Documents, Audio, etc.)
 - Example
+
 Before:
 
 Downloads/
