@@ -9,6 +9,8 @@
 # then create the file by using file write function.
 # This whole code is inside a function generate_files which pases the extension arguement for both remaining files 
 # formations
+# we did all this hustle because since test folder where all the files were kept as unorganized was in the repository 
+# but not inside File Organzer folder.
 
 import os
 def generate_files(extensions,count=10):
@@ -22,6 +24,6 @@ def generate_files(extensions,count=10):
         with open(file_path,"w") as f:
             f.write(f"the file{i} has been created")
 if __name__=="__main__":
-    # generate_files("jpeg") since already created 
+    generate_files("jpeg")
     generate_files("txt")
     generate_files("pdf")
