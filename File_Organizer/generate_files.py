@@ -23,7 +23,6 @@ def generate_files(extensions,count=10):
         file_path=os.path.join(test_dir,file_name)
         with open(file_path,"w") as f:
             f.write(f"the file{i} has been created")
-if __name__=="__main__":
-    generate_files("jpeg")
-    generate_files("txt")
-    generate_files("pdf")
+generate_files("jpeg")
+generate_files("txt")
+generate_files("pdf")
